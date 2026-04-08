@@ -1,0 +1,155 @@
+{
+  "projects":
+    [
+     {"id":"1",
+      "title":"Weather Mood",
+      "thumbnail":"/images/projects/WeatherMood/thumbnail/WeatherMood_thumb.png",
+      "popupPreview":[
+        "/images/projects/WeatherMood/preview/WeatherMood_preview1.png",
+        "/images/projects/WeatherMood/preview/WeatherMood_preview2.png",
+        "/images/projects/WeatherMood/preview/WeatherMood_preview3.png",
+        "/images/projects/WeatherMood/preview/WeatherMood_preview4.png",
+        "/images/projects/WeatherMood/preview/WeatherMood_preview5.png"
+      ],
+      "siteURL":"https://duajd3-lab.github.io/Weather-Mood/index.html",
+      "githubURL":"https://github.com/duajd3-lab/Weather-Mood.git",
+      "projectKeyWord":[
+         "#날씨",
+         "#일상생활",
+         "#코디추천",
+         "#음악추천"
+      ],
+      "type":"팀 프로젝트",
+      "intro":"다양한 날씨 정보 외에도 현재 날씨에 따른 코디와 그에 어울리는 음악 및 야외활동을 추천해주는 서비스",
+      "popupIntro":"기상청의 오픈 API데이터를 실시간으로 호출하여 통신함으로서 제공되는 다양한 날씨 정보를 제공함을 넘어 10분 간격으로 업데이트 되는 초단기 실황의 현재 기온에 활용하여 현재 기온에맞는 적절한 코디를 추천해줍니다. 또한 기온 외에 하늘 상태, 강수 유무 등의 정보를 localStorage에 저장하여 상태를 실시간으로 공유하여 날씨에 맞는 아이템, 음악, 야외활동을 함께 추천해줍니다. 또한 localstorage에 저장된 사용자의 상태 및 날씨 데이터를 바탕으로 보관함 기능과 성별 선택, 배경색상 선택 등의 다양한 기능도 제공됩니다.",
+      "period":"2026.01 ~ 2026.03",
+      "role":{
+        "dev":"40%",
+        "design":"30%",
+        "plan":"40%"
+      },
+      "member":"개발(4), 디자인(2), 기획(4)",
+      "stack":[
+      {
+        "img":"/images/stack/Figma.png",
+        "stackName":"Figma"
+      },
+      {
+        "img":"/images/stack/javascript.png",
+        "stackName":"JavaScript"
+      },
+      {
+        "img":"/images/stack/github.png",
+        "stackName":"GitHub"
+      },
+      {
+        "img":"/images/stack/Photoshop.png",
+        "stackName":"Photoshop"
+      },
+      {
+        "img":"/images/stack/illustrator.png",
+        "stackName":"Illustrator"
+      }
+      ],
+      "features":[
+        "기상청 날씨 api를 호출하여 받은 데이터를 기반으로 코디 추천",
+        "코디 외에도 현재 날씨와 어울리는 음악 및 (야외)활동 추천",
+        "초단기,단기,중기예보 제공 및 미세먼지, 일출/일몰, 달의 위상 정보 제공",
+        "성별에 따른 코디 추천을 위한 성별 선택 기능 제공",
+        "배경색 색상, 언어 및 온도 단위 변경 기능 제공",
+        "마음에 드는 코디 및 음악을 스크랩하여 보관함에 저장 가능"
+      ],
+      "troubles":[
+        {
+            "issue":"html에 <b>container</b>하나로 두고 두 개를 각각 <b>innerHTML</b>하니 빈공간일 때 스와이퍼 느낌을 표현하기 위해 오른쪽으로 넘치는 느낌을 예시로 점선을 표현하였는데 스크랩된게 들어가면 화면 너비만큼 <b>width</b>값을 잡아야 <b>overflow-x:auto</b>를 해서 자동으로 스크롤이 생겨야하는데 생기지 않음.",
+            "solution":"각각 <b>container</b>와 <b>containerempty</b>로 잡아서 <b>width</b>값을 달리해준다."
+        },
+        {
+            "issue":"온보딩 성별선택 화면에서 성별을 선택안하고 <b>active</b>가 없는 비활성화된 버튼인데도 확인버튼을 누르면 main으로 넘어가버리는 문제 발생",
+            "solution":"<b>if(!selectedgender) return</b>으로 성별을 선택하지 않아 <b>localstorage</b>의 <b>selectedgender</b>안에 성별값이 없으면 return으로 그 클릭이벤트를 종료시켜 실행이 안되게 한다."
+        },
+        {
+            "issue":"다른 스타일 코디가 스타일 2개 이상일 때 한 스타일창에서 모든 코디를 지우고 팝업에서 나갔을 때 다른 스타일창 코디가 표시되는 오류 발생 ",
+            "solution":"팝업 닫기버튼을 눌렀을때 <b>loadscrap(activebtn.textcontent)</b>로 선택된 스타일 버튼을 매개변수로 하는 출력함수를 한번 더 실행시켜 <b>innerHTML</b>로 저장된 코디가 없는 스타일창의 텍스트를 띄워주게 한다."
+        }
+      ],
+      "review":"<b>api데이터</b>를 요청하여 데이터를 받는 과정에서의 어려움을 겪으며 <b>api데이터 처리 및 호출방법</b>에 대해 깊이 이해할 수 있었습니다. 특히 많은 양의 데이터를 필요한 곳에서 일일이 호출하여 사용하다보니 <b>긴 로딩 속도와 데이터 간 충돌 및 일일호출 제한</b> 등의 문제에 직면하였습니다. 이를 통해 <b>한 곳에서만 호출하고 필요한 곳에서 원하는 데이터만 뽑아쓰거나</b> <b>localstorage에 저장</b>하여 활용하는 등의 방대한 데이터를 관리하는 방법에 대해 익힐 수 있었습니다. 또한 <b>localstorage</b>만으로도 데이터를 저장하고 다른곳에서 쉽게 활용할 수 있음을 깨달았으며 <b>스크랩된 데이터들을 저장하고 삭제할 수 있는 보관함의 기능</b>을 구현하며 <b>CRUD</b> 작업을 어느정도 경험하고 이해할 수 있었습니다."
+     },
+
+     {"id":"2",
+      "title":"Da:room 다룸",
+      "thumbnail":"/images/projects/MyPortfolioSite/thumbnail/MyPortfolioSite_thumb.png",
+      "popupPreview":[
+        "/images/projects/WeatherMood/preview/WeatherMood_preview1.png",
+        "/images/projects/WeatherMood/preview/WeatherMood_preview2.png",
+        "/images/projects/WeatherMood/preview/WeatherMood_preview3.png",
+        "/images/projects/WeatherMood/preview/WeatherMood_preview4.png",
+        "/images/projects/WeatherMood/preview/WeatherMood_preview5.png"
+      ],
+      "siteURL":"",
+      "githubURL":"",
+      "projectKeyWord":[
+         "#투두리스트",
+         "#메모장",
+         "#나만의 펫",
+         "#방꾸미기"
+      ],
+      "type":"개인 프로젝트",
+      "intro":"단순한 투두리스트를 넘어 나만의 공간을 꾸미고 펫도 키우는 재미요소를 추가하여 습관처럼 찾게되는 투두리스트 앱",
+      "popupIntro":"기상청의 오픈 API데이터를 실시간으로 호출하여 통신함으로서 제공되는 다양한 날씨 정보를 제공함을 넘어 10분 간격으로 업데이트 되는 초단기 실황의 현재 기온에 활용하여 현재 기온에맞는 적절한 코디를 추천해줍니다. 또한 기온 외에 하늘 상태, 강수 유무 등의 정보를 localStorage에 저장하여 상태를 실시간으로 공유하여 날씨에 맞는 아이템, 음악, 야외활동을 함께 추천해줍니다. 또한 localstorage에 저장된 사용자의 상태 및 날씨 데이터를 바탕으로 보관함 기능과 성별 선택, 배경색상 선택 등의 다양한 기능도 제공됩니다.",
+      "period":"2026.01 ~ 2026.03",
+      "role":{
+        "dev":"40%",
+        "design":"30%",
+        "plan":"40%"
+      },
+      "member":"개발(4), 디자인(2), 기획(4)",
+      "stack":[
+      {
+        "img":"/images/stack/Figma.png",
+        "stackName":"Figma"
+      },
+      {
+        "img":"/images/stack/javascript.png",
+        "stackName":"JavaScript"
+      },
+      {
+        "img":"/images/stack/github.png",
+        "stackName":"GitHub"
+      },
+      {
+        "img":"/images/stack/Photoshop.png",
+        "stackName":"Photoshop"
+      },
+      {
+        "img":"/images/stack/illustrator.png",
+        "stackName":"Illustrator"
+      }
+      ],
+      "features":[
+        "기상청 날씨 api를 호출하여 받은 데이터를 기반으로 코디 추천",
+        "코디 외에도 현재 날씨와 어울리는 음악 및 (야외)활동 추천",
+        "초단기,단기,중기예보 제공 및 미세먼지, 일출/일몰, 달의 위상 정보 제공",
+        "코디 추천을 위한 성별 선택 기능 제공",
+        "배경색 색상, 언어 및 온도 단위 변경 기능 제공",
+        "마음에 드는 코디 및 음악을 스크랩하여 보관함에 저장 가능"
+      ],
+      "troubles":[
+        {
+            "issue":"html에 <b>container</b>하나로 두고 두 개를 각각 innerhtml하니 빈공간일 때 스와이퍼 느낌을 표현하기 위해 오른쪽으로 넘치는 느낌을 예시로 점선을 표현하였는데 스크랩된게 들어가면 화면 너비만큼 width값을 잡아야 overflow-x:auto를 해서 자동으로 스크롤이 생겨야하는데 생기지 않음.",
+            "solution":"각각 container와 containerempty로 잡아서 width값을 달리해준다."
+        },
+        {
+            "issue":"온보딩 성별선택 화면에서 성별을 선택안하고 active가 없는 비활성화된 버튼인데도 확인버튼을 누르면 main으로 넘어가버리는 문제 발생",
+            "solution":"if(!selectedgender) return으로 성별을 선택하지 않아 localstorage의 selectedgender안에 성별값이 없으면 return으로 그 클릭이벤트를 종료시켜 실행이 안되게 한다."
+        },
+        {
+            "issue":"다른 스타일 코디가 스타일 2개 이상일 때 한 스타일창에서 모든 코디를 지우고 팝업에서 나갔을 때 다른 스타일창 코디가 표시되는 오류 발생 ",
+            "solution":"팝업 닫기버튼을 눌렀을때 loadscrap(activebtn.textcontent)로 선택된 스타일 버튼을 매개변수로 하는 출력함수를 한번 더 실행시켜 innerHTML로 저장된 코디가 없는 스타일창의 텍스트를 띄워주게 한다."
+        }
+      ],
+      "review":"api데이터를 요청하여 데이터를 받는 과정에서의 어려움을 겪으며 api데이터 처리 및 호출방법에 대해 깊이 이해할 수 있었습니다. 특히 많은 양의 데이터를 필요한 곳에서 일일이 호출하여 사용하다보니 긴 로딩 속도와 데이터 간 충돌 및 일일호출 제한등의 문제에 직면하였습니다. 이를 통해 한 곳에서만 호출하고 필요한 데이터만 뽑아쓰거나 localstorage에 저장하여 활용하는 등의 방대한 데이터를 관리하는 방법에 대해 익힐 수 있었습니다. 또한 localstorage만으로도 데이터를 저장하고 다른곳에서 쉽게 활용할 수 있음을 깨달았으며 스크랩된 데이터들을 저장하고 삭제할 수 있는 보관함의 기능을 구현하며 CRUD 작업을 어느정도 경험하고 이해할 수 있었습니다."
+     }
+
+    ]
+}
