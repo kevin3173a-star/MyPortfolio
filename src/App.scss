@@ -603,13 +603,13 @@ body{min-width: 900px;}
             padding-top:40px;
             
             //입력창 클릭했을때 input창 테두리 색
-            .css-voecp4-MuiInputBase-input-MuiFilledInput-input:focus{
-              outline:1px solid #1A2036;
+            .MuiFilledInput-input:focus{
+              outline:1px solid #1A2036 !important;
               border-radius: 10px;
             }
             //입력창 클릭했을때 label글자 색
-            .css-eok8s2-MuiFormLabel-root-MuiInputLabel-root.Mui-focused{
-              color:#1A2036;
+            .MuiInputLabel-filled.Mui-focused{
+              color:#1A2036 !important;
             }
             input{
               height: 20px;
