@@ -9,6 +9,9 @@ function Stack({item}) {//5. {item}으로 받아서
             item.map((stacks)=>{
             return <li key={stacks.id}>
                     <img src={stacks.src} alt=''/>
+                    <span className='tooltip'>
+                      {stacks.name}
+                    </span>
                    </li>
             })
         }

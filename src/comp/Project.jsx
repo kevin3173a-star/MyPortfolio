@@ -15,8 +15,9 @@ function Project() {
           return <div className='project' key={pj.id}>
                     <div className='projectImg' onClick={()=>{
                         setSelectedProject(pj)//클릭시 어떤 프로젝트 클릭했는지 저장
+                        
                     }}>
-                        <img src={pj.thumbnail} alt='Weather Mood 썸네일'/>
+                        <img src={pj.thumbnail} alt='{pj.title}썸네일'/>
                     </div>
                     <div className='projectTxt'>
                         <div className='projectTxt1'>
@@ -25,10 +26,11 @@ function Project() {
                         </div>
                         <div className='projectTxt2'>
                             <div className='projectTxtKeyWord'>
-                            <span>{pj.projectKeyWord[0]}</span>
-                            <span>{pj.projectKeyWord[1]}</span>
-                            <span>{pj.projectKeyWord[2]}</span>
-                            <span>{pj.projectKeyWord[3]}</span>
+                                {
+                                    pj.projectKeyWord?.map((i)=>{
+                                        return<span key={i}>{i}</span>
+                                    })
+                                }                              
                             </div>
                             <p className={pj.type==="팀 프로젝트" ? "team" : "personal"}>{pj.type}</p>
                         </div>
@@ -43,6 +45,7 @@ function Project() {
         {selectedProject && (
             <ProjectPopup
               data={selectedProject}
+              selectedProject={selectedProject}
               onClose={()=>setSelectedProject(null)}
               />
         )}

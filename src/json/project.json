@@ -20,7 +20,7 @@
          "#음악추천"
       ],
       "type":"팀 프로젝트",
-      "intro":"다양한 날씨 정보 외에도 현재 날씨에 따른 코디와 그에 어울리는 음악 및 야외활동을 추천해주는 서비스",
+      "intro":"단순히 날씨만 알려주는 서비스가 아닌 API 기반 현재 날씨에 따라 코디와 그에 어울리는 음악 및 야외활동을 추천해주는 서비스로 날씨를 더 개개인에 와닿게 알려줄 수 없을까 라는 고민에서부터 시작한 프로젝트",
       "popupIntro":"기상청의 오픈 API데이터를 실시간으로 호출하여 통신함으로서 제공되는 다양한 날씨 정보를 제공함을 넘어 10분 간격으로 업데이트 되는 초단기 실황의 현재 기온에 활용하여 현재 기온에맞는 적절한 코디를 추천해줍니다. 또한 기온 외에 하늘 상태, 강수 유무 등의 정보를 localStorage에 저장하여 상태를 실시간으로 공유하여 날씨에 맞는 아이템, 음악, 야외활동을 함께 추천해줍니다. 또한 localstorage에 저장된 사용자의 상태 및 날씨 데이터를 바탕으로 보관함 기능과 성별 선택, 배경색상 선택 등의 다양한 기능도 제공됩니다.",
       "period":"2026.01 ~ 2026.03",
       "role":{
@@ -49,6 +49,10 @@
       {
         "img":"/images/stack/illustrator.png",
         "stackName":"Illustrator"
+      },
+      {
+        "img":"/images/stack/vercel.png",
+        "stackName":"Vercel"
       }
       ],
       "features":[
@@ -76,80 +80,164 @@
       "review":"<b>api데이터</b>를 요청하여 데이터를 받는 과정에서의 어려움을 겪으며 <b>api데이터 처리 및 호출방법</b>에 대해 깊이 이해할 수 있었습니다. 특히 많은 양의 데이터를 필요한 곳에서 일일이 호출하여 사용하다보니 <b>긴 로딩 속도와 데이터 간 충돌 및 일일호출 제한</b> 등의 문제에 직면하였습니다. 이를 통해 <b>한 곳에서만 호출하고 필요한 곳에서 원하는 데이터만 뽑아쓰거나</b> <b>localstorage에 저장</b>하여 활용하는 등의 방대한 데이터를 관리하는 방법에 대해 익힐 수 있었습니다. 또한 <b>localstorage</b>만으로도 데이터를 저장하고 다른곳에서 쉽게 활용할 수 있음을 깨달았으며 <b>스크랩된 데이터들을 저장하고 삭제할 수 있는 보관함의 기능</b>을 구현하며 <b>CRUD</b> 작업을 어느정도 경험하고 이해할 수 있었습니다."
      },
 
+
      {"id":"2",
-      "title":"Da:room 다룸",
+            "title":"TripLog - 나의 여행 기록",
+            "thumbnail":"/images/projects/TripLog/thumbnail/TripLog_preview1.png",
+            "popupPreview":[
+              "/images/projects/TripLog/preview/TripLog_preview6.png",
+              "/images/projects/TripLog/preview/TripLog_preview1.png",
+              "/images/projects/TripLog/preview/TripLog_preview2.png",
+              "/images/projects/TripLog/preview/TripLog_preview3.png",
+              "/images/projects/TripLog/preview/TripLog_preview4.png",
+              "/images/projects/TripLog/preview/TripLog_preview5.png",
+              "/images/projects/TripLog/preview/TripLog_preview8.png",
+              "/images/projects/TripLog/preview/TripLog_preview9.png"
+            ],
+            "siteURL":"https://trip-log-my-trip-planner-7fmv.vercel.app/planner",
+            "githubURL":"https://github.com/kevin3173a-star/TripLog-my-trip-planner.git",
+            "projectKeyWord":[
+              "#여행플래너",
+              "#나만의 기록",
+              "#지도API",
+              "#체크리스트"
+            ],
+            "type":"팀 프로젝트",
+            "intro":"나만의 여행을 기록하기 위한 올인원 여행 플래너 플랫폼으로 지도 기반의 직관적인 일정 설계부터 경비 정산, 체크리스트 등 여행의 전 과정을 유기적으로 연결하여 최적화된 여행 경험을 누릴 수 있도록 돕는 통합 서비스 ",
+            "popupIntro":"여행 계획을 짜는데 있어 가고자 하는 해당 지역의 관광지 정보를 API를 통해 제공함으로서 미리 알아보지 않고도 부담없이 계획을 짤 수 있으며 호출한 지도 API와도 연계하여 장소의 위치와 장소간 대략적인 동선도 확인할 수 있습니다. 또한 관광지 찜 목록, 준비물 체크리스트, 여행 경비, 갤러리 등의 기능도 제공되며 이를 MongoDB에서 통합적으로 관리하여 한 여행 일정 내에서 CRUD 및 보관,관리 등에 용이하게 하였습니다. NextAuth를 활용한 sns로그인으로 간편로그인을 제공하며 저장된 session을 통해 사용자들의 개별적인 여행일정을 계획하고 보관할 수 있습니다.   ",
+            "period":"2026.04 ~ 2026.05",
+            "role":{
+              "dev":"40%",
+              "design":"25%",
+              "plan":"30%"
+            },
+            "member":"개발(4), 디자인(1), 기획(4)",
+            "stack":[
+            {
+              "img":"/images/stack/nextjs.png",
+              "stackName":"Next.js"
+            },
+            {
+              "img":"/images/stack/reactjs.png",
+              "stackName":"React.js"
+            },
+            {
+              "img":"/images/stack/scss.png",
+              "stackName":"Scss"
+            },
+            {
+              "img":"/images/stack/zustand.png",
+              "stackName":"Zustand"
+            },
+            {
+              "img":"/images/stack/nextjs.png",
+              "stackName":"NextAuth.js"
+            },
+            {
+              "img":"/images/stack/MongoDB.png",
+              "stackName":"MongoDB"
+            },
+            {
+              "img":"/images/stack/github.png",
+              "stackName":"Github"
+            },
+            {
+              "img":"/images/stack/vercel.png",
+              "stackName":"Vercel"
+            }
+            ],
+            "features":[
+              "지도 API 기반 여행 일정 추가 및 위치와 일정 간 동선 확인 가능",
+              "관광지 API 기반 지역별 주요 관광지를 제공하며 찜 기능을 통한 개인 리스트 관리 가능",
+              "CRUD를 활용한 여행 준비물을 관리할 수 있는 체크리스트 기능 제공",
+              "여행 전은 물론 여행 중일때도 바로 지출내역을 기록하여 경비 관리 및 동행자 간 정산 기능 제공",
+              "imgBB를 활용한 갤러리 기능을 추가하여 여행 사진 업로드 가능",
+              "반응형을 지원하여 데스크탑 외에도 모바일,태블릿 등 다양한 기기 환경에도 최적화 적용"
+            ],
+            "troubles":[
+              {
+                  "issue":"스케줄 추가 시 교통수단 선택 상황에서 아이콘만 선택하고 메모를 안쓰고 넘어가서 둘 중 하나만 출력되는 문제 발생",
+                  "solution":"아이콘 선택에 <b>selected</b> 변수를 부여하여 <b>disabled={!selected}</b>로 아이콘이 선택되지 않았을때는 input창을 비활성화, 선택되었을때는 활성화를 시켰습니다. 또한 <b>useRef</b>과 <b>input</b>에 <b>ref</b>연결을 통해 input태그를 제어하여 <b>useEffect</b>로 아이콘 선택 즉시 <b>current.focus()</b>로 input에 focus를 넣어 입력을 유도하였습니다."
+              },
+              {
+                  "issue":"가져오는 관광지 API의 수에 따라 리스트의 과도한 출력으로 인한 화면 사용성의 문제 발생",
+                  "solution":"전체적으로 숨겨져있던 스크롤바를 해당 영역에서만 보이게 하기 위해 <b>&::-webkit-scrollbar</b>에 직접 <b>display:block !important</b>를 주어 우선으로 보이게 하였고 스크롤이 생기도록 함과 동시에 <b>scrollbar-width</b>값을 <b>thin</b> 상태로 두어서 화면에 보여지게 한다."
+              },
+              {
+                  "issue":"페이지 새로고침 시 바로 <b>MongoDB</b> 데이터를 불러오지 못하고, 다른 페이지 이동 후 복귀를 해야 데이터가 출력되는 문제 발생 ",
+                  "solution":"데이터 로드에 불안정성과 마운팅 시점의 문제를 해결하기 위해 <b>useEffect</b>에 <b>의존성 배열 session 객체</b>를 추가하여 인증 상태가 업데이트될 때마다 자동으로 데이터를 다시 확인하게하여 새로고침 시에도 <b>session</b> 정보가 확인되는 즉시 데이터를 바로 마운팅되도록 하였습니다. "
+              }
+            ],
+            "review":"<b>지도 API</b>를 처음 사용해보며 다양한 지도 플랫폼에서 제공되는 만큼 실제 앱을 배포하지 않거나 사업자가 없으면 API를 받지 못하는 문제들을 경험해보았습니다. 이를 통해 우리가 일상생활에선 쉽게 접하지만 <b>지도 데이터들의 방대함과 자료들의 민감성</b>들을 견주어 볼때 직접 데이터를 받아 사용하는건 다른 문제였음을 깨달았습니다. 또한 <b>구글 지도 api</b>의 <b>좌표값을 활용한 마커찍기, 마커 사이의 거리, 경로 계산</b>등 다양한 기능을 활용하는 방법에 대해 익힐 수 있었습니다. 특히 <b>NextAuth</b>의 로그인 환경을 구축해보면서 <b>로그인 session</b>관리의 중요성과 어려움에 대해 알게 되었으며 <b>API 및 secret KEY</b>를 <b>.env</b>파일에 넣고 배포할때 환경변수에 필히 등록하여야 하는 등의 <b>네트워크 환경 및 서버 문제</b>를 직접 경험해보며 <b>로그인 기능</b>에 대한 이해도를 더 높힐 수 있었습니다. "
+     },
+
+
+     {"id":"3",
+      "title":"웹 포트폴리오",
       "thumbnail":"/images/projects/MyPortfolioSite/thumbnail/MyPortfolioSite_thumb.png",
       "popupPreview":[
-        "/images/projects/WeatherMood/preview/WeatherMood_preview1.png",
-        "/images/projects/WeatherMood/preview/WeatherMood_preview2.png",
-        "/images/projects/WeatherMood/preview/WeatherMood_preview3.png",
-        "/images/projects/WeatherMood/preview/WeatherMood_preview4.png",
-        "/images/projects/WeatherMood/preview/WeatherMood_preview5.png"
+        "/images/projects/MyPortfolioSite/preview/myportfolioSite_preview1.png",
+        "/images/projects/MyPortfolioSite/preview/myportfolioSite_preview2.png",
+        "/images/projects/MyPortfolioSite/preview/myportfolioSite_preview3.png"
       ],
       "siteURL":"",
-      "githubURL":"",
+      "githubURL":"https://github.com/kevin3173a-star/MyPortfolio.git",
       "projectKeyWord":[
-         "#투두리스트",
-         "#메모장",
-         "#나만의 펫",
-         "#방꾸미기"
+         "#포트폴리오",
+         "#웹사이트",
+         "#반응형"
       ],
       "type":"개인 프로젝트",
-      "intro":"단순한 투두리스트를 넘어 나만의 공간을 꾸미고 펫도 키우는 재미요소를 추가하여 습관처럼 찾게되는 투두리스트 앱",
-      "popupIntro":"기상청의 오픈 API데이터를 실시간으로 호출하여 통신함으로서 제공되는 다양한 날씨 정보를 제공함을 넘어 10분 간격으로 업데이트 되는 초단기 실황의 현재 기온에 활용하여 현재 기온에맞는 적절한 코디를 추천해줍니다. 또한 기온 외에 하늘 상태, 강수 유무 등의 정보를 localStorage에 저장하여 상태를 실시간으로 공유하여 날씨에 맞는 아이템, 음악, 야외활동을 함께 추천해줍니다. 또한 localstorage에 저장된 사용자의 상태 및 날씨 데이터를 바탕으로 보관함 기능과 성별 선택, 배경색상 선택 등의 다양한 기능도 제공됩니다.",
-      "period":"2026.01 ~ 2026.03",
+      "intro":"저의 프론트엔드로서 개발 역량을 보여드리기 위해 제작된 웹 형식의 포트폴리오로 어느 환경에서도 볼 수 있도록 반응형을 적용하였습니다. ",
+      "popupIntro":"React.js를 기반으로 개발하였으며 페이지 전체의 동적 요소를 최소화하여 내용에 더 집중되도록 하였습니다. 더욱 정리된 그리드를 사용하여 디자인 완성도를 높혔고 ProjectPopup을 따로 두어서 진행한 프로젝트를 효과적으로 보여주고자 하였습니다. 또한 불필요한 페이지 분할없이 한 페이지로 구성하였고 상단의 메뉴바로 빠르게 이동이 가능하도록 구현하였습니다.",
+      "period":"2026.03 ~ 진행중",
       "role":{
-        "dev":"40%",
-        "design":"30%",
-        "plan":"40%"
+        "dev":"100%",
+        "design":"100%",
+        "plan":"100%"
       },
-      "member":"개발(4), 디자인(2), 기획(4)",
+      "member":"개인 프로젝트",
       "stack":[
       {
         "img":"/images/stack/Figma.png",
         "stackName":"Figma"
       },
       {
-        "img":"/images/stack/javascript.png",
-        "stackName":"JavaScript"
+        "img":"/images/stack/reactjs.png",
+        "stackName":"React.js"
+      },
+      {
+        "img":"/images/stack/scss.png",
+        "stackName":"Scss"
       },
       {
         "img":"/images/stack/github.png",
-        "stackName":"GitHub"
+        "stackName":"Github"
       },
       {
-        "img":"/images/stack/Photoshop.png",
-        "stackName":"Photoshop"
+        "img":"/images/stack/MongoDB.png",
+        "stackName":"MongoDB"
       },
       {
-        "img":"/images/stack/illustrator.png",
-        "stackName":"Illustrator"
+        "img":"/images/stack/vercel.png",
+        "stackName":"Vercel"
       }
-      ],
-      "features":[
-        "기상청 날씨 api를 호출하여 받은 데이터를 기반으로 코디 추천",
-        "코디 외에도 현재 날씨와 어울리는 음악 및 (야외)활동 추천",
-        "초단기,단기,중기예보 제공 및 미세먼지, 일출/일몰, 달의 위상 정보 제공",
-        "코디 추천을 위한 성별 선택 기능 제공",
-        "배경색 색상, 언어 및 온도 단위 변경 기능 제공",
-        "마음에 드는 코디 및 음악을 스크랩하여 보관함에 저장 가능"
       ],
       "troubles":[
         {
-            "issue":"html에 <b>container</b>하나로 두고 두 개를 각각 innerhtml하니 빈공간일 때 스와이퍼 느낌을 표현하기 위해 오른쪽으로 넘치는 느낌을 예시로 점선을 표현하였는데 스크랩된게 들어가면 화면 너비만큼 width값을 잡아야 overflow-x:auto를 해서 자동으로 스크롤이 생겨야하는데 생기지 않음.",
-            "solution":"각각 container와 containerempty로 잡아서 width값을 달리해준다."
+            "issue":"같은 형식의 <b>project.json</b>을 <b>map</b>으로 돌려서 출력하다보니 필요없는 항목을 제외하면 찾고자하는 그 항목을 찾을 수 없다는 오류 발생 ",
+            "solution":"<b>Project.js</b>에서 정의됐던 여러 프로젝트들 중 어떤 프로젝트를 선택했는지를 알 수 있게 하는 <b>selectedProject</b>를 <b>props</b>로 넘겨받아서 <b>selectedProject.title!=='웹 포트폴리오' &&</b>로 선택한 프로젝트의 타이틀이 웹 포트폴리오일때를 제외하고 해당부분을 <b>map</b>을 돌리게 한다."
         },
         {
-            "issue":"온보딩 성별선택 화면에서 성별을 선택안하고 active가 없는 비활성화된 버튼인데도 확인버튼을 누르면 main으로 넘어가버리는 문제 발생",
-            "solution":"if(!selectedgender) return으로 성별을 선택하지 않아 localstorage의 selectedgender안에 성별값이 없으면 return으로 그 클릭이벤트를 종료시켜 실행이 안되게 한다."
-        },
-        {
-            "issue":"다른 스타일 코디가 스타일 2개 이상일 때 한 스타일창에서 모든 코디를 지우고 팝업에서 나갔을 때 다른 스타일창 코디가 표시되는 오류 발생 ",
-            "solution":"팝업 닫기버튼을 눌렀을때 loadscrap(activebtn.textcontent)로 선택된 스타일 버튼을 매개변수로 하는 출력함수를 한번 더 실행시켜 innerHTML로 저장된 코디가 없는 스타일창의 텍스트를 띄워주게 한다."
+            "issue":"샘플이미지 전체를 묶고 있는 <b>Swiper</b> 안의 개별 슬라이드 <b>SwiperSlide</b>의 <b>img</b>를 <b>map</b>으로 돌리니 슬라이드가 사라져 넘어가지 않는 문제 발생 ",
+            "solution":"이미지 자체만이 아닌 이미지를 묶고 있는 슬라이드 틀인 <b>SwiperSlide</b>를 같이 넣어 <b>map</b>을 돌려 틀도 같이 반복되어 슬라이드가 정상 작동하게 하였다."
         }
       ],
-      "review":"api데이터를 요청하여 데이터를 받는 과정에서의 어려움을 겪으며 api데이터 처리 및 호출방법에 대해 깊이 이해할 수 있었습니다. 특히 많은 양의 데이터를 필요한 곳에서 일일이 호출하여 사용하다보니 긴 로딩 속도와 데이터 간 충돌 및 일일호출 제한등의 문제에 직면하였습니다. 이를 통해 한 곳에서만 호출하고 필요한 데이터만 뽑아쓰거나 localstorage에 저장하여 활용하는 등의 방대한 데이터를 관리하는 방법에 대해 익힐 수 있었습니다. 또한 localstorage만으로도 데이터를 저장하고 다른곳에서 쉽게 활용할 수 있음을 깨달았으며 스크랩된 데이터들을 저장하고 삭제할 수 있는 보관함의 기능을 구현하며 CRUD 작업을 어느정도 경험하고 이해할 수 있었습니다."
+      "review":"웹페이지를 구축하면서 데이터의 양이 방대하지 않을경우는 페이지 이동으로 아예 화면 전환이 되는것보단 <b>App.js</b>한 페이지안에서 다 구성함으로서 관리가 편하고 별개의 컴포넌트를 분리하여 유지보수에 더 용이함을 깨달았습니다. 포트폴리오를 보는 사람들이 연락을 남길 수 있는 <b>Contact</b>화면도 구상해보면서 단순한 <b>input</b>창이 아닌 <b>MongoDB 서버</b>와의 연결을 통해 통합적으로 데이터를 관리할 수 있는 환경을 경험해볼 수 있었습니다."
      }
+     
+
+
 
     ]
 }

@@ -3,77 +3,111 @@
     [
         {
         "id":"1",
-        "src":"/images/stack/Photoshop.png"
+        "src":"/images/stack/Photoshop.png",
+        "name":"Photoshop"
         },
         {
         "id":"2",
-        "src":"/images/stack/illustrator.png"
+        "src":"/images/stack/illustrator.png",
+        "name":"illustrator"
         },
         {
         "id":"3",
-        "src":"/images/stack/XD.png"
+        "src":"/images/stack/XD.png",
+        "name":"XD"
         },
         {
         "id":"4",
-        "src":"/images/stack/Figma.png"
+        "src":"/images/stack/Figma.png",
+        "name":"Figma"
         },
         {
         "id":"5",
-        "src":"/images/stack/html.png"
+        "src":"/images/stack/html.png",
+        "name":"html"
         },
         {
         "id":"6",
-        "src":"/images/stack/css.png"
+        "src":"/images/stack/css.png",
+        "name":"css"
         },
         {
         "id":"7",
-        "src":"/images/stack/javascript.png"
+        "src":"/images/stack/javascript.png",
+        "name":"javascript"
         },
         {
         "id":"8",
-        "src":"/images/stack/github.png"
+        "src":"/images/stack/github.png",
+        "name":"Github"
+        },
+        {
+        "id":"9",
+        "src":"/images/stack/scss.png",
+        "name":"Scss"
         }
     ],       
 "B":
     [
         {
         "id":"1",
-        "src":"/images/stack/zustand.png"
+        "src":"/images/stack/zustand.png",
+        "name":"Zustand"
         },
+        
         {
         "id":"2",
-        "src":"/images/stack/scss.png"
+        "src":"/images/stack/reactjs.png",
+        "name":"React.js"
         },
         {
         "id":"3",
-        "src":"/images/stack/reactjs.png"
+        "src":"/images/stack/jquery.png",
+        "name":"Jquery"
         },
         {
         "id":"4",
-        "src":"/images/stack/jquery.png"
+        "src":"/images/stack/MongoDB.png",
+        "name":"MongoDB"
         },
         {
         "id":"5",
-        "src":"/images/stack/MongoDB.png"
+        "src":"/images/stack/nodejs.png",
+        "name":"Node.js"
         },
         {
         "id":"6",
-        "src":"/images/stack/nodejs.png"
+        "src":"/images/stack/nextjs.png",
+        "name":"Next.js"
+        },
+        {
+        "id":"7",
+        "src":"/images/stack/vuejs.png",
+        "name":"Vue.js"
+        },
+        {
+        "id":"8",
+        "src":"/images/stack/Vercel.png",
+        "name":"Vercel"
         }
     ],        
 "C":
     [
         {
         "id":"1",
-        "src":"/images/stack/tailwindcss.png"
+        "src":"/images/stack/tailwindcss.png",
+        "name":"tailwindcss"
         },
+        
         {
         "id":"2",
-        "src":"/images/stack/Vercel.png"
+        "src":"/images/stack/express.png",
+        "name":"express"
         },
         {
         "id":"3",
-        "src":"/images/stack/express.png"
+        "src":"/images/stack/Pinia.png",
+        "name":"Pinia"
         }
     ]        
 }

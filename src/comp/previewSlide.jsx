@@ -4,9 +4,10 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import ProjectData from '../json/project.json'
 //let style={height:"300px", width:"1200px"}
 
-function PreviewSlide() {
+function PreviewSlide({data}) {
   return (
      <>
       <Swiper
@@ -21,21 +22,16 @@ function PreviewSlide() {
         modules={[EffectFade, Navigation, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="/images/projects/WeatherMood/preview/WeatherMood_preview1.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/projects/WeatherMood/preview/WeatherMood_preview2.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/projects/WeatherMood/preview/WeatherMood_preview3.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/projects/WeatherMood/preview/WeatherMood_preview4.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/projects/WeatherMood/preview/WeatherMood_preview5.png" />
-        </SwiperSlide>
+        
+          {
+            data.popupPreview?.map((p)=>{
+
+              return  <SwiperSlide> 
+                        <img src={p} key={p}/>
+                      </SwiperSlide>
+            })
+          }
+        
       </Swiper>
     </>
   );

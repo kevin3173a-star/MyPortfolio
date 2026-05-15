@@ -20,6 +20,7 @@ function App() {
     formdata.append('date', date);
     let obj = Object.fromEntries(formdata);
     let res = await axios.post(`${process.env.REACT_APP_APIURL}/contact`, obj);
+    console.log(process.env.REACT_APP_APIURL)
     if (res.data.success) {
       alert('성공')
       e.target.reset();
@@ -47,15 +48,15 @@ function App() {
               behavior: 'smooth'
             });
           }}><div className='hl1'>
-              <p className='Developer'>
+              <div className='Developer'>
                 <b>Dev</b>
                 <p>eloper</p>
-              </p>
+              </div>
               <div className='headerLogoPlus'>
-                <p className='Design'>
+                <div className='Design'>
                   <p>De</p>
                   <b>sign</b>
-                </p>
+                </div>
                 <p>+</p>
               </div>
             </div>
@@ -93,24 +94,24 @@ function App() {
                 </div>
               </div>
               <div className='introLogo'>
-                <p className='Developer'>
+                <div className='Developer'>
                   <p>
                     <b>Dev</b>eloper
                   </p>
-                </p>
+                </div>
                 <div className='introLogoPlus'>
-                  <p className='Design'>
+                  <div className='Design'>
                     <p>
                       De<b>sign</b>
                     </p>
-                  </p>
+                  </div>
                   <p>+</p>
                 </div>
-                <p className='devsign'>
+                <div className='devsign'>
                   <p>
                     <b>Devsign</b>
                   </p>
-                </p>
+                </div>
               </div>
             </div>
             <div className='introUnder'></div>
@@ -181,7 +182,7 @@ function App() {
 
                     </div>
                     <div className='stack'>
-                      <p>경험만 해본 수준</p>
+                      <p>경험은 해보았다</p>
                       <Stack item={stackData.C} />
                     </div>
                   </div>

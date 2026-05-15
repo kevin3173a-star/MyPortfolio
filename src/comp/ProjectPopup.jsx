@@ -3,7 +3,7 @@ import ProjectData from '../json/project.json'
 import PreviewSlide from '../comp/previewSlide';
 import Divider from '@mui/material/Divider';
 
-function ProjectPopup({data,onClose}) {
+function ProjectPopup({data,onClose,selectedProject}) {
   const pop = useRef();
   const popupBox = useRef();
   useEffect(()=>{
@@ -21,13 +21,13 @@ function ProjectPopup({data,onClose}) {
     })
   },[])
   if(!data) return null;
-
+console.log(selectedProject)
   return (
     <div className='projectPopup' ref={pop}>
           <div className='popupBox' >
               <div className='popupClose' onClick={()=>{onClose(); document.body.style='overflow:visible;';}}></div>
               <div className='popupBoxPreview'>
-                <PreviewSlide/>
+                <PreviewSlide data={selectedProject}/>
               </div>
               <div className='popupBoxTxt'>
                 <div className='popupBoxTxt1'>
@@ -41,11 +41,14 @@ function ProjectPopup({data,onClose}) {
                   </div>
                   <div className='txt1-2'>
                     <div className='projectTxtKeyWord'>
-                        <span>{data.projectKeyWord[0]}</span>
-                        <span>{data.projectKeyWord[1]}</span>
-                        <span>{data.projectKeyWord[2]}</span>
-                        <span>{data.projectKeyWord[3]}</span>
-                      </div>
+                      {
+                      data.projectKeyWord?.map((i)=>{
+                        return<span key={i}>{i}</span>
+                                    })
+
+                      
+                      }
+                    </div>
                       <p className={data.type==="팀 프로젝트" ? "team" : "personal"}>{data.type}</p>
                   </div>
                   <div className='txt1-3'>
@@ -84,16 +87,23 @@ function ProjectPopup({data,onClose}) {
                       }
                     </div>
                   </div>
-                  <div className='popupFeatures'>
-                    <h3>주요 기능</h3>
-                    <ul>
-                      {
-                        data.features.map((pp,i)=>{
-                          return <li key={i} dangerouslySetInnerHTML={{__html:pp}} ></li>
-                        })
-                      }
-                    </ul>
-                  </div>
+                  {selectedProject.title!=='웹 포트폴리오' && 
+                  <>
+                    <div className='popupFeatures'>
+                      
+                        <h3>주요 기능</h3>
+                        <ul>
+                          {
+                            data.features?.map((pp,i)=>{
+                              return <li key={i} dangerouslySetInnerHTML={{__html:pp}} ></li>
+                            })
+                          }
+                        </ul>
+                      
+                    </div>
+                  
+                  </>
+                  }
                 </div>
                 <div className='popupBoxTxt3'>
                   <div className='popupTroubles'>

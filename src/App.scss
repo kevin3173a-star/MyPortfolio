@@ -441,6 +441,24 @@ body{min-width: 900px;}
                     &:hover{
                       transform:scale(1.1);
                     }
+                    &:hover .tooltip{
+                      opacity: 1;
+                    }
+                    .tooltip{
+                      position: absolute;
+                      bottom: -30px;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      
+                      background: rgba(255, 255, 255,0.8);
+                      color: rgb(0, 0, 0);
+                      padding: 5px 10px;
+                      border-radius: 5px;
+                      font-size:12px;
+
+                      opacity: 0;
+                      transition: 0.3s;
+                    }
                   }
                 }
 
@@ -474,7 +492,7 @@ body{min-width: 900px;}
                   height: 260px;
                   border-radius: 10px;
                   border:1px solid rgba(237, 237, 237,0.1);
-                  object-fit: contain; 
+                  object-fit: cover; 
                   &:hover{
                     //transform:scale(1.2);
                     border:1px solid rgba(237, 237, 237,0.3);
@@ -916,7 +934,7 @@ body{min-width: 900px;}
               .popupStack{
                 display: flex;
                 gap:15px;
-                padding-bottom: 30px;
+                //padding-bottom: 30px;
                 span{
                   display: flex;
                   padding:5px 15px;
@@ -940,6 +958,7 @@ body{min-width: 900px;}
               }
             }
             .popupFeatures{
+              padding-top:30px;
               h3{padding-bottom: 10px;}
               ul{padding-left: 20px;
                 
