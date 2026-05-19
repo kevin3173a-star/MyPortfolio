@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 
 function NavBar() {
+    const [open,setOpen]=useState(false);
+    const [active,setActive]=useState('');
     useEffect(()=>{
         const el_header=document.querySelector("header")
     
@@ -28,12 +30,21 @@ function NavBar() {
         const sections =document.querySelectorAll('section')
         const el_navBars=document.querySelectorAll(".ani")
 
+        console.log(sections);
+        
+
         let observer = new IntersectionObserver((entries)=>{
             entries.forEach((entry,i)=>{
                 if(entry.isIntersecting){
+                    //setActive(entry.target.id);
                     const id=entry.target.id
                     el_navBars.forEach((el_navBar)=>{
                         el_navBar.classList.remove('active');
+
+                        console.log(
+                            el_navBar.getAttribute('href'),
+                            `#${id}`
+                        )
 
                         if(el_navBar.getAttribute('href')==`#${id}`){
                             el_navBar.classList.add('active')
@@ -41,7 +52,7 @@ function NavBar() {
                     })
                 }
             })
-        },{threshold:0.5})
+        },{threshold:0.2})
     
         sections.forEach((section)=>{
             observer.observe(section)
@@ -54,26 +65,46 @@ function NavBar() {
     },[]);
 
   return (
-    <ul className='navBar'>
-        <li><a href='#skills' className='ani' onClick={(e)=>{
-          e.preventDefault();
-          document.getElementById('skills').scrollIntoView({
-            behavior:"smooth"
-          })
-        }}>SKILLS</a></li>
-        <li><a href='#projects' className='ani' onClick={(e)=>{
-          e.preventDefault();
-          document.getElementById('projects').scrollIntoView({
-            behavior:"smooth"
-          })
-        }}>PROJECT</a></li>
-        <li><a href='#contact' className='ani' onClick={(e)=>{
-          e.preventDefault();
-          document.getElementById('contact').scrollIntoView({
-            behavior:"smooth"
-          })
-        }}>CONTACT</a></li>
-    </ul>
+    <>
+        <button
+            className={`burger ${open ? 'open' : ''}`}
+            onClick={()=>setOpen(!open)}
+            >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul  className={`navBar ${open ? 'open' : ''}`}>
+            <li><a href='#skills' className={`ani ${active==='skills' ? 'active' : ''}`}
+            onClick={(e)=>{
+                e.preventDefault();
+   
+                setOpen(false);
+                document.getElementById('skills').scrollIntoView({
+                    behavior:"smooth"
+                })
+            }}>SKILLS</a></li>
+            <li><a href='#projects' className={`ani ${active==='projects' ? 'active' : ''}`}
+            onClick={(e)=>{
+                e.preventDefault();
+             
+                setOpen(false);
+                document.getElementById('projects').scrollIntoView({
+                    behavior:"smooth"
+                })
+            }}>PROJECT</a></li>
+            <li><a href='#contact' className={`ani ${active==='contact' ? 'active' : ''}`}
+            onClick={(e)=>{
+                e.preventDefault();
+                
+                setOpen(false);
+                document.getElementById('contact').scrollIntoView({
+                    behavior:"smooth"
+                })
+            }}>CONTACT</a></li>
+        </ul>
+    </>
   )
 }
 

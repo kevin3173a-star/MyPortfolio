@@ -1,10 +1,10 @@
-@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2'); font-weight: 100; font-display: swap; }  
-@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2'); font-weight: 200; font-display: swap; }  
-@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2'); font-weight: 300; font-display: swap; }  
-@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }  
-@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }  
-@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }  
-@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }  
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2'); font-weight: 100; font-display: block; }  
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2'); font-weight: 200; font-display: block; }  
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2'); font-weight: 300; font-display: block; }  
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }  
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2'); font-weight: 500; font-display: block; }  
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: block; }  
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }  
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 *{box-sizing:border-box;}
@@ -16,7 +16,9 @@ ul{margin:0;padding:0;}
 ::-webkit-scrollbar {
     display: none;
 }
-body{min-width: 900px;}
+body{
+  //min-width: 900px;
+}
 .App {
   background-color: #101114;
   width: 100%;
@@ -64,7 +66,7 @@ body{min-width: 900px;}
               //display: inline-block;
             }
           }
-             p:nth-of-type(2){
+             >p{
               font-size: 24px;
               //padding-left:13px;
               width: 30px;
@@ -184,12 +186,12 @@ body{min-width: 900px;}
 
 
 
-    
+    //.burger{display: none;}
     .navBar{
       display: flex;
       font-weight: 600;
       gap:50px;
-      margin:15.5px 0;
+      //border-radius: 0 0 0 20px;
       a{
         &:hover{
           border-bottom:2px solid rgba(255, 255, 255,1);
@@ -199,7 +201,8 @@ body{min-width: 900px;}
           }
       }
     }
-    &.active{transform:translateY(0);}
+    header.active{transform:translateY(0);}
+    
   }
 
   //컨텐츠==========================================================================
@@ -296,7 +299,7 @@ body{min-width: 900px;}
                 animation: reveal 1s 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
               }
             }
-            p:nth-of-type(2){
+            >p{
               width: 50px;
               height: 50px;
               text-align: center;
@@ -471,6 +474,7 @@ body{min-width: 900px;}
 
     //컨텐츠 - 프로젝트======================================================================
     .projects{
+      scroll-margin-top: 100px;
       //padding:200px 460px;
       padding:200px 24%;
       padding-top:100px;
@@ -509,6 +513,7 @@ body{min-width: 900px;}
                 h2{
                   font-size:23px;
                   font-weight: 600;
+                  
                  }
                  a{
                   line-height: 1.0;
@@ -516,6 +521,7 @@ body{min-width: 900px;}
                   padding-top:4px;
                   color:#B5B5B5;
                   height: 28px;
+                  flex-shrink: 0;
                   &:hover{
                     border-bottom:1px solid #B5B5B5;
                   }
@@ -556,11 +562,13 @@ body{min-width: 900px;}
                   line-height: 2.5;
                   font-size: 14px;
                   color:#FF5E5E;
+                  flex-shrink: 0;
                 }
                 .team{
                   line-height: 2.5;
                   font-size: 14px;
                   color:#5175FF;
+                  flex-shrink: 0;
                 }
               }
               .projectTxt3{
@@ -578,6 +586,7 @@ body{min-width: 900px;}
 
     //컨텐츠 - 컨택트==========================================================================
     .contact{
+      scroll-margin-top: -100px;
       //padding:200px 460px;
       padding:200px 24%;
       width: 100%;
@@ -601,6 +610,7 @@ body{min-width: 900px;}
           padding:0 80px;
           border-radius: 20px;
           width: 550px;
+          //min-width: 250px;
           margin:50px auto;
           .contactTxt{
             color:#101114;
@@ -665,7 +675,12 @@ body{min-width: 900px;}
               font-weight: 500;
               margin-top:20px;
               cursor: pointer;
-              &:hover{background-color: #232d50;}
+              &:not(:disabled):hover{background-color: #232d50;}
+              &:disabled{
+                background-color: #8A90A3;
+                cursor: default;
+
+              }
             }
             button::before{
             font-family:"Material Symbols Outlined";
@@ -841,18 +856,19 @@ body{min-width: 900px;}
                 display: flex;
                 align-items: center;
                 gap:10px;
-                height: 30px;
+                //height: 30px;
                 padding-top:8px;
                 a{color:#101114;
                 line-height: 1.0;
-                height: 26px;
+                border-bottom: 1px solid transparent;
+                //height: 26px;
                 font-weight: 500;
                   &:hover{
-                    border-bottom:1px solid #232d50;
+                    border-bottom-color: #232d50;
                     color:#232d50;
                   }
                   }
-                a:nth-of-type(1){padding-top:2px;}
+                a:nth-of-type(1){padding-top:2px; flex-shrink: 0;}
                 a:nth-of-type(1)::after{
                   content:'link';
                   font-family:"Material Symbols Outlined";
@@ -863,7 +879,7 @@ body{min-width: 900px;}
                   padding-left:3px;
                   display: inline-block;
                 }
-                a:nth-of-type(2){padding-left:2px;padding-top:2px;}
+                a:nth-of-type(2){padding-left:2px;padding-top:2px;flex-shrink: 0;}
                 a:nth-of-type(2)::after{
                   content:'link';
                   font-family:"Material Symbols Outlined";
@@ -884,6 +900,7 @@ body{min-width: 900px;}
               .projectTxtKeyWord{
                 display: flex;
                 gap:10px;
+                flex-wrap: wrap;
                 span{
                   display: inline-block;
                   padding:6px 15px;
@@ -896,10 +913,14 @@ body{min-width: 900px;}
               .personal{
                 color:#FF5E5E;
                 font-weight: 500;
+                flex-shrink: 0;
+                line-height: 2.0;
               }
               .team{
                 color:#5175FF;
                 font-weight: 500;
+                flex-shrink: 0;
+                line-height: 2.0;
               }
             }
             .txt1-3{
@@ -934,6 +955,7 @@ body{min-width: 900px;}
               .popupStack{
                 display: flex;
                 gap:15px;
+                flex-wrap: wrap;
                 //padding-bottom: 30px;
                 span{
                   display: flex;
@@ -1025,7 +1047,8 @@ body{min-width: 900px;}
     }
   }
 }
-@media  (min-width:1000px) and (max-width:1360px){
+
+@media  /* (min-width:1000px) */ (max-width:1360px){
       .introTxtKeyWord{
         flex-wrap:wrap;
         text-align: center;
@@ -1055,11 +1078,18 @@ body{min-width: 900px;}
       .App .contents .projects .projectsBox .projectsCont{
         display: flex;
         flex-direction: column;
+      }   
+      .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-4{
+        gap:50px;
       }
-      
-      
-    }
-    @media  (min-width:500px) and (max-width:1000px) {
+      .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-1{
+        display: flex;
+        flex-direction: column;
+        padding-bottom:15px;
+      }
+}
+
+@media  /* (min-width:500px) and */ (max-width:1000px) {
       .App.header{
         padding:25px 100px;
       }
@@ -1101,12 +1131,234 @@ body{min-width: 900px;}
         padding:0 10%;
       }
       
-    }
-    @media  (min-width:500px) and (max-width:961px){
+      .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-2{
+        display: flex;
+        flex-direction: column;
+        padding-bottom:10px;
+        .team,.personal{padding-top:15px;}
+      }
+      
+}
+
+@media  (min-width:500px) and (max-width:961px){
 
 
-    }
-    @media  (min-width:500px) and (max-width:800px){
+}
 
+@media  (max-width:910px){
+        .App .contents .intro{
+          padding:200px 10%;
+        }
+        .App .contents .skills{
+          padding:200px 15%;
+        }
+        .App .contents .projects{
+          padding:200px 15%;
+          padding-top:100px;
+        }
+        .App .header{
+          padding:25px 10%;
+        }
+        .App .contents .contact {
+          padding:200px 15%;
+          .contactBox .contactCont .contactTxt{
+            line-height: 1.6;
+          }
+        }
+        .App .contents .projectPopup{
+          padding: 4vh 10%;
+        }
+    
+}
+@media  (max-width:700px){
+        .App .contents .intro .introBox{
+          display: flex;
+          flex-direction: column-reverse;
+          .introLogo{padding:20px 0;}
+        }
+        .App .contents .skills .skillsBox .skillsCores .skillsCore{
+          display: flex;
+          flex-direction: column;
+          .skillsCoreImgT1,.skillsCoreImgT2,.skillsCoreImgT3{width: 100%;}
+          .skillsCoreTxt{width: 100%;}
+        }
+         .App .header{
+          padding:25px 5%;
+        }
+        .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-1 > div{
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          padding-top:15px;
+          gap:3px;
+          a{
+            border-bottom: 1px solid transparent;
+            //padding-bottom:3px;
+            :hover{border-bottom-color: #232d50;}
+          }
+          a:nth-of-type(2) {
+            padding-left:0;
+          }
+        }
+        .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-4{
+          gap:20px;
+        }
+        .App .contents .projectPopup{
+          padding:4vh 5%;
+          .popupBox{padding:10px;}
+        } 
+        
+        //버거메뉴 등장
+        /* .burger{
+          display:block;
+          background:none;
+          border:none;
+          color:white;
+          font-size:32px;
+          cursor:pointer;
+          z-index:100;
+          position:relative;
+          z-index:1000;
+        }
+
+        .navBar{
+          position:fixed;
+          top:0;
+          right:-100%;
+
+          width:150px;
+          height:30vh;
+
+          background:#111;
+          display: flex;
+          flex-direction:column;
+          padding:100px 30px;
+
+          transition:0.3s;
+        } */
+         .burger{
+          width:40px;
+          height:40px;
+
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          gap:6px;
+
+          background:none;
+          border:none;
+          cursor:pointer;
+
+          position:relative;
+          z-index:1000;
+        }
+
+        .burger span{
+          width:100%;
+          height:3px;
+          background:#fff;
+          border-radius:999px;
+
+          transition:0.3s;
+        }
+
+        /* X 애니메이션 */
+        .burger.open span:nth-child(1){
+          transform:translateY(9px) rotate(45deg);
+        }
+
+        .burger.open span:nth-child(2){
+          opacity:0;
+        }
+
+        .burger.open span:nth-child(3){
+          transform:translateY(-9px) rotate(-45deg);
+        }
+
+        .navBar{
+          position:fixed;
+          top:0;
+          right:-200%;
+
+          width:200px;
+          height:100vh;
+
+          background:#111;
+
+          display:flex;
+          flex-direction:column;
+
+          padding:100px 30px;
+          gap:30px;
+
+          transition:0.3s;
+        }
+
+        .navBar.open{
+          right:0;
+        }
+}
+@media(min-width:700px){
+  .burger{display: none;}
+}
+@media (max-width:500px){
+  .App .contents .projects .projectsBox .projectsCont .project .projectTxt .projectTxt1 {
+    display: flex;
+    flex-direction: column;
+    a{width: 117px;}
+  }
+  .App .contents .projects .projectsBox .projectsCont .project .projectTxt .projectTxt2 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom:10px;
+    .personal,.team{
+      line-height: 1.6;
+      padding-top:10px;
     }
+  }
+  .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-4{
+    display: flex;
+    flex-direction: column;
+  }
+  .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt3 .popupTroubles .popupTrouble .trouble1{
+    padding-left:0;
+    .trouble1_solution{
+      padding-left: 0;
+      p{padding-left:5px;}
+    }
+    .trouble1_issue p{
+      padding-left:5px;
+    }
+  }
+  .App .contents .contact .contactBox .contactCont{
+    padding:0 5%;
+    .contactLink div{
+      gap:5px;
+      flex-wrap: wrap;
+    }
+  }
+  
+  
+}
+@media (max-width:265px){
+  .App .header .headerLogo .hl1{
+    width: 100px;
+  }
+  .App .header{
+    padding:25px 2%;
+  }
+  .App .contents .contact{
+    padding:200px 5%;
+  }
+  .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-4 .PJrole > div{
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+@media (max-width:200px){
+  .App .header .navBar{
+    width: 150px;
+  }
+} 
 

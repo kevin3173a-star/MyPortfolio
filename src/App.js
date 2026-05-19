@@ -8,27 +8,38 @@ import NavBar from './comp/NavBar';
 import Project from './comp/Project';
 import ProjectPopup from './comp/ProjectPopup';
 import axios from 'axios'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router,Routes, Route, NavLink } from 'react-router-dom'
 import Admin from './Admin';
 
 function App() {
   async function handleSubmit(e) {
     e.preventDefault();
+    if (!isValidContact) {
+      alert('이메일 또는 전화번호 형식이 올바르지 않습니다.');
+      return;
+    }
     let formdata = new FormData(e.target);
     let date = new Date();
     formdata.append('date', date);
+
     let obj = Object.fromEntries(formdata);
     let res = await axios.post(`${process.env.REACT_APP_APIURL}/contact`, obj);
     console.log(process.env.REACT_APP_APIURL)
+
     if (res.data.success) {
-      alert('성공')
+      alert('전송되었습니다!')
+      setForm({
+        title: '',
+        email: '',
+        msg: ''
+      });
       e.target.reset();
     } else {
-      alert('실패')
+      alert('전송에 실패하였습니다!')
     }
   }
-
+  
   useEffect(() => {
     async function getData() {
       let res = await axios.get(`${process.env.REACT_APP_APIURL}/contact`);
@@ -36,6 +47,40 @@ function App() {
     }
     getData();
   }, [])
+  
+  //contact 유효성 검사 및 필수 입력 값
+  const [form, setForm] = useState({
+    title: '',
+    email: '',
+    msg: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  //이메일 유효성 검사
+  const isValidEmail =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
+  
+  //전화번호 유효성 검사
+  const isValidPhone =
+  /^01[0-9]-?\d{3,4}-?\d{4}$/.test(form.email);
+
+  const isValidContact =
+    isValidEmail || isValidPhone;
+
+  const isFormValid =
+    form.title.trim() &&
+    form.email.trim() &&
+    form.msg.trim() &&
+    isValidContact;
+
   return (
     <>
       <div className="App" >
@@ -217,24 +262,40 @@ function App() {
                       variant='filled'
                       label="제목"
                       name="title"
+                      value={form.title}
+                      onChange={handleChange}
                     />
                     <TextField
                       id='outlined-basic'
                       variant='filled'
                       label="이메일(연락처)"
                       name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      error={form.email && !isValidContact}
+                      helperText={
+                        form.email &&
+                        !isValidContact &&
+                        '이메일 또는 전화번호 형식이 올바르지 않습니다.'
+                      }
                     />
                     <TextField
                       id='outlined-basic'
                       variant='filled'
                       label="내용"
                       name="msg"
+                      value={form.msg}
+                      onChange={handleChange}
+                      multiline
+                      minRows={6}
+                      maxRows={8}
+                      fullWidth
 
                     //multiline 
                     //minRows={6} maxRows={8} 
                     //fullWidth
                     />
-                    <button>보내기</button>
+                    <button disabled={!isFormValid}>보내기</button>
                   </div>
                 </form>
                 <div className='contactTelEmail'>
@@ -244,15 +305,15 @@ function App() {
                 </div>
                 <div className='contactLink'>
                   <div>
-                    <a href='https://github.com/' target="_blank">
+                    <a href='https://github.com/kevin3173a-star' target="_blank">
                       <img src='/images/contactLink/github.png'></img>
                     </a>
-                    <a>
+                    {/* <a>
                       <img src='/images/contactLink/kakaoTalk.png'></img>
                     </a>
                     <a>
                       <img src='/images/contactLink/blog.png'></img>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>
