@@ -55,11 +55,11 @@
       "troubles":[
         {
             "issue":"같은 형식의 <b>project.json</b>을 <b>map</b>으로 돌려서 출력하다보니 필요없는 항목을 제외하면 찾고자하는 그 항목을 찾을 수 없다는 오류 발생 ",
-            "solution":"<b>Project.js</b>에서 정의됐던 여러 프로젝트들 중 어떤 프로젝트를 선택했는지를 알 수 있게 하는 <b>selectedProject</b>를 <b>props</b>로 넘겨받아서 <b>selectedProject.title!=='웹 포트폴리오' &&</b>로 선택한 프로젝트의 타이틀이 웹 포트폴리오일때를 제외하고 해당부분을 <b>map</b>을 돌리게 한다."
+            "solution":"<b>Project.js</b>에서 정의됐던 여러 프로젝트들 중 어떤 프로젝트를 선택했는지를 알 수 있게 하는 <b>selectedProject</b>를 <b>props</b>로 넘겨받아서 <b>selectedProject.title!=='웹 포트폴리오' &&</b>로 선택한 프로젝트의 타이틀이 웹 포트폴리오일때를 제외하고 해당부분을 <b>map</b>을 돌리게 하였습니다."
         },
         {
             "issue":"샘플이미지 전체를 묶고 있는 <b>Swiper</b> 안의 개별 슬라이드 <b>SwiperSlide</b>의 <b>img</b>를 <b>map</b>으로 돌리니 슬라이드가 사라져 넘어가지 않는 문제 발생 ",
-            "solution":"이미지 자체만이 아닌 이미지를 묶고 있는 슬라이드 틀인 <b>SwiperSlide</b>를 같이 넣어 <b>map</b>을 돌려 틀도 같이 반복되어 슬라이드가 정상 작동하게 하였다."
+            "solution":"이미지 자체만이 아닌 이미지를 묶고 있는 슬라이드 틀인 <b>SwiperSlide</b>를 같이 넣어 <b>map</b>을 돌려 틀도 같이 반복되어 슬라이드가 정상 작동하게 하였습니다."
         }
       ],
       "review":"웹페이지를 구축하면서 데이터의 양이 방대하지 않을경우는 페이지 이동으로 아예 화면 전환이 되는것보단 <b>App.js</b>한 페이지안에서 다 구성함으로서 관리가 편하고 별개의 컴포넌트를 분리하여 유지보수에 더 용이함을 깨달았습니다. 포트폴리오를 보는 사람들이 연락을 남길 수 있는 <b>Contact</b>화면도 구상해보면서 단순한 <b>input</b>창이 아닌 <b>MongoDB 서버</b>와의 연결을 통해 통합적으로 데이터를 관리할 수 있는 환경을 경험해볼 수 있었습니다."
@@ -130,15 +130,15 @@
       "troubles":[
         {
             "issue":"html에 <b>container</b>하나로 두고 두 개를 각각 <b>innerHTML</b>하니 빈공간일 때 스와이퍼 느낌을 표현하기 위해 오른쪽으로 넘치는 느낌을 예시로 점선을 표현하였는데 스크랩된게 들어가면 화면 너비만큼 <b>width</b>값을 잡아야 <b>overflow-x:auto</b>를 해서 자동으로 스크롤이 생겨야하는데 생기지 않음.",
-            "solution":"각각 <b>container</b>와 <b>containerempty</b>로 잡아서 <b>width</b>값을 달리해준다."
+            "solution":"각각 <b>container</b>와 <b>containerempty</b>로 잡아서 <b>width</b>값을 달리해주었습니다."
         },
         {
             "issue":"온보딩 성별선택 화면에서 성별을 선택안하고 <b>active</b>가 없는 비활성화된 버튼인데도 확인버튼을 누르면 main으로 넘어가버리는 문제 발생",
-            "solution":"<b>if(!selectedgender) return</b>으로 성별을 선택하지 않아 <b>localstorage</b>의 <b>selectedgender</b>안에 성별값이 없으면 return으로 그 클릭이벤트를 종료시켜 실행이 안되게 한다."
+            "solution":"<b>if(!selectedgender) return</b>으로 성별을 선택하지 않아 <b>localstorage</b>의 <b>selectedgender</b>안에 성별값이 없으면 return으로 그 클릭이벤트를 종료시켜 실행이 안되게 하였습니다."
         },
         {
             "issue":"다른 스타일 코디가 스타일 2개 이상일 때 한 스타일창에서 모든 코디를 지우고 팝업에서 나갔을 때 다른 스타일창 코디가 표시되는 오류 발생 ",
-            "solution":"팝업 닫기버튼을 눌렀을때 <b>loadscrap(activebtn.textcontent)</b>로 선택된 스타일 버튼을 매개변수로 하는 출력함수를 한번 더 실행시켜 <b>innerHTML</b>로 저장된 코디가 없는 스타일창의 텍스트를 띄워주게 한다."
+            "solution":"팝업 닫기버튼을 눌렀을때 <b>loadscrap(activebtn.textcontent)</b>로 선택된 스타일 버튼을 매개변수로 하는 출력함수를 한번 더 실행시켜 <b>innerHTML</b>로 저장된 코디가 없는 스타일창의 텍스트를 띄워주었습니다."
         }
       ],
       "review":"<b>api데이터</b>를 요청하여 데이터를 받는 과정에서의 어려움을 겪으며 <b>api데이터 처리 및 호출방법</b>에 대해 깊이 이해할 수 있었습니다. 특히 많은 양의 데이터를 필요한 곳에서 일일이 호출하여 사용하다보니 <b>긴 로딩 속도와 데이터 간 충돌 및 일일호출 제한</b> 등의 문제에 직면하였습니다. 이를 통해 <b>한 곳에서만 호출하고 필요한 곳에서 원하는 데이터만 뽑아쓰거나</b> <b>localstorage에 저장</b>하여 활용하는 등의 방대한 데이터를 관리하는 방법에 대해 익힐 수 있었습니다. 또한 <b>localstorage</b>만으로도 데이터를 저장하고 다른곳에서 쉽게 활용할 수 있음을 깨달았으며 <b>스크랩된 데이터들을 저장하고 삭제할 수 있는 보관함의 기능</b>을 구현하며 <b>CRUD</b> 작업을 어느정도 경험하고 이해할 수 있었습니다."
@@ -224,7 +224,7 @@
               },
               {
                   "issue":"가져오는 관광지 API의 수에 따라 리스트의 과도한 출력으로 인한 화면 사용성의 문제 발생",
-                  "solution":"전체적으로 숨겨져있던 스크롤바를 해당 영역에서만 보이게 하기 위해 <b>&::-webkit-scrollbar</b>에 직접 <b>display:block !important</b>를 주어 우선으로 보이게 하였고 스크롤이 생기도록 함과 동시에 <b>scrollbar-width</b>값을 <b>thin</b> 상태로 두어서 화면에 보여지게 한다."
+                  "solution":"전체적으로 숨겨져있던 스크롤바를 해당 영역에서만 보이게 하기 위해 <b>&::-webkit-scrollbar</b>에 직접 <b>display:block !important</b>를 주어 우선으로 보이게 하였고 스크롤이 생기도록 함과 동시에 <b>scrollbar-width</b>값을 <b>thin</b> 상태로 두어서 화면에 보여지게 하였습니다."
               },
               {
                   "issue":"페이지 새로고침 시 바로 <b>MongoDB</b> 데이터를 불러오지 못하고, 다른 페이지 이동 후 복귀를 해야 데이터가 출력되는 문제 발생 ",
@@ -301,6 +301,74 @@
               }
             ],
             "review":"여러 <b>API 데이터</b>들을 호출해보면서 이제 직접 사이트에서 원하는 데이터를 호출하는 것은 한결 수월해졌음을 알 수 있었고 vue,react,next 등 여러 언어들을 사용하면서도 <b>API</b> 호출 자체는 크게 다르지 않음을 알 수 있었습니다. 이런 경험을 통해 데이터의 구성,종류가 다르더라도 이를 해석하고 출력하기 전까지 어느정도 가공할 수 있음을 깨달았습니다. 하지만 이를 출력하는 과정에서 발생하는 <b>예기치 못한 문제를 해결하는 과정</b>에서 학습이 됨을 다시한번 느꼈고 아무리 간단한 앱이라 할지라도 <b>서버와 프론트 간의 원활한 정보 전달과 그에 대한 전반적인 이해</b>가 없다면 결코 간단치 않음을 익힐 수 있었습니다.  "
+     },
+
+     {"id":"5",
+            "title":"EduSearch - 교육 강좌 검색 플랫폼",
+            "thumbnail":"/images/projects/RightNews/thumbnail/iPhone 17 (1).png",
+            "popupPreview":[
+              "/images/projects/RightNews/preview/RightNews_preview1.png",
+              "/images/projects/RightNews/preview/RightNews_preview2.png",
+              "/images/projects/RightNews/preview/RightNews_preview3.png",
+              "/images/projects/RightNews/preview/RightNews_preview4.png",
+              "/images/projects/RightNews/preview/RightNews_preview5.png",
+              "/images/projects/RightNews/preview/RightNews_preview6.png"
+            ],
+            "siteURL":"https://edu-search-beige.vercel.app/",
+            "githubURL":"https://github.com/kevin3173a-star/EduSearch",
+            "projectKeyWord":[
+              "#교육",
+              "#강좌검색",
+              "#Json"
+            ],
+            "type":"개인 프로젝트",
+            "intro":"쏟아지는 교육 정보 속 구직활동을 하는 청년들을 위해 원하는 교육 강좌 정보를 검색하여 탐색하고 수강신청까지 이뤄질 수 있도록 연계한 웹 서비스",
+            "popupIntro":"선정한 대표 교육 카테고리를 json으로 데이터들을 정리하여 로딩없이 바로 카테고리별 교육 강좌 검색이 가능하며 카테고리 외에도 실무,기초,프로젝트 등의 일반 키워드로도 검색이 가능하게 하여 사용성을 높혔습니다. 교육 강좌 상세 페이지에서는 평점,기간,시간 등 기본 정보 외에도 커리큘럼,강사 소개,수강 후기도 제공되어 다양한 정보를 보고 수강신청 버튼을 통해 연계된 강좌 사이트로 이동됩니다. ",
+            "period":"2026.06",
+            "role":{
+              "dev":"100%",
+              "design":"100%",
+              "plan":"100%"
+            },
+            "member":"개인 프로젝트",
+            "stack":[
+            {
+              "img":"/images/stack/nextjs.png",
+              "stackName":"Next.js"
+            },
+            {
+              "img":"/images/stack/github.png",
+              "stackName":"Github"
+            },
+            {
+              "img":"/images/stack/vercel.png",
+              "stackName":"Vercel"
+            }
+            ],
+            "features":[
+              "카테고리별로 분리된 json데이터로 검색 시 로딩없이 데이터 출력 가능",
+              "제목,내용에 포함되있는 기본 키워드로도 검색 가능 ",
+              "강좌 내용 상세보기를 다양한 정보 및 후기를 볼 수 있으며 수강신청 버튼으로 연계된 강좌 사이트로 이동하여 수강신청 가능"
+            ],
+            "troubles":[
+              {
+                  "issue":"카테고리별로 분리된 json으로 데이터를 가져오다보니 <b>const filterData=eduData[enterKeyword]</b>로 정해진 키워드 검색만 가능하여 검색의 의미가 상실되는 문제 발생 ",
+                  "solution":"기존의 json을 <b>Object.entries(eduData).flatMap(([category, courses])</b>로 하나의 전체배열로 만들고 그걸 <b>allCourses</b>에 담아 기존 카테고리 검색 외에 <b>allCourses.filter(item=>item.title.includes(enterKeyword) || item.description.includes(enterKeyword))</b>로 제목 및 내용까지 훑을 수 있게 일반 키워드 검색도 <b>filterData</b>에 추가합니다. 그 후 배열로 만들어진 <b>filterData</b>를 바로 <b>map</b>으로 돌려서 제목 및 내용에 포함되있는 키워드로도 검색이 가능하게 하였습니다. "
+              },
+              {
+                  "issue":"<b>grid-template-columns:repeat(auto-fit,minmax(300px,1fr))</b>로 하니 <b>list</b>가 1게면 이 한칸이 1fr을 전부 먹어서 좌우로 꽉차게 넓어지는 문제 발생",
+                  "solution":"<b>grid-template-columns:repeat(3,300px)</b>로 <b>auto-fit</b>이 아닌 3으로 열개수를 고정하여 3개일때의 1,2번 위치와 동일하게 왼쪽부터 채워지도록 하였습니다. 반응형에서는 <b>분기마다 (3,300px), (2,300px)..이런식으로 직접 열수를 바꿔주는 방식</b>을 채택하였습니다."
+              },
+              {
+                  "issue":"Next 배포 시 미리 페이지를 만들어두려고 하지만 <b>useSearchParams</b>가 브라우저 실행 전이라 <b>url</b>를 읽을 수 없는 문제로 배포 오류 발생",
+                  "solution":"당장은 안되도 준비되면 실행할거다라고 알려주는 <b>suspense</b>를 제일 바깥쪽 <b>layout.js</b>에 적용하여 <b>useSearchParams</b>를 포함한 전체가 <b>suspense</b>의 영향을 받도록 하였고 브라우저가 열리고 <b>url</b>이 생긴 후로부터 <b>useSearchParams</b>가 작동되도록 하여 정상 배포가 되도록 하였습니다."
+              },
+              {
+                  "issue":"주요정보를 스크롤되도 제자리에 고정되도록 <b>position:fixed</b>를 적용하였으니 <b>absolute</b>처럼 띄워지는 특성으로 기존 컨텐츠들이 망가지는 문제 발생",
+                  "solution":"좌측의 <b>fixed</b>될 공간을 비워둔만큼 스크롤되는 정보들을 우측으로 이동시켰습니다."
+              }
+            ],
+            "review":"<b>라우팅</b>을 직접 할 필요없이 폴더만 만들면 자동 생성되고 SSR·SSG와 같은 렌더링 전략과 파일 기반 라우팅을 제공해 로딩 성능이 좋으며 <b>useSearchParams,metadata</b>와 같은 기본 기능도 제공되며 배포도 쉬운 <b>Next.js</b>프레임워크를 직접 채택하여 진행한 첫 프로젝트임에 의미를 두고 작업하였습니다. 혼자 작업을 해보면서 <b>SSR·SSG 방식보다 느린 CSR방식</b>을 사용해보면서 브라우저에서 <b>url</b>을 읽어 <b>suspense</b>을 이용해 준비가 되면 <b>useSearchParams</b>를 사용할수있다는것과 성능과 배포 측면에서 렌더링 전략을 고려해야함을 깨달았습니다."
      }
 
 
