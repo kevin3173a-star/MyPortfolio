@@ -307,10 +307,10 @@
             "title":"EduSearch - 교육 강좌 검색 플랫폼",
             "thumbnail":"/images/projects/EduSearch/thumbnail/EduSearch_thumb.png",
             "popupPreview":[
+              "/images/projects/EduSearch/preview/EduSearch_preview1.png",
               "/images/projects/EduSearch/preview/EduSearch_preview2.png",
               "/images/projects/EduSearch/preview/EduSearch_preview3.png",
-              "/images/projects/EduSearch/preview/EduSearch_preview4.png",
-              "/images/projects/EduSearch/preview/EduSearch_preview1.png"
+              "/images/projects/EduSearch/preview/EduSearch_preview4.png"
             ],
             "siteURL":"https://edu-search-beige.vercel.app/",
             "githubURL":"https://github.com/kevin3173a-star/EduSearch",
