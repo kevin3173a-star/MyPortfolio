@@ -236,7 +236,7 @@
 
      {"id":"4",
             "title":"지금 뉴스 - 실시간 뉴스를 한눈에",
-            "thumbnail":"/images/projects/RightNews/thumbnail/iPhone 17 (1).png",
+            "thumbnail":"/images/projects/RightNews/thumbnail/RightNews.thumb.png",
             "popupPreview":[
               "/images/projects/RightNews/preview/RightNews_preview1.png",
               "/images/projects/RightNews/preview/RightNews_preview2.png",
@@ -305,21 +305,19 @@
 
      {"id":"5",
             "title":"EduSearch - 교육 강좌 검색 플랫폼",
-            "thumbnail":"/images/projects/RightNews/thumbnail/iPhone 17 (1).png",
+            "thumbnail":"/images/projects/EduSearch/thumbnail/EduSearch_thumb.png",
             "popupPreview":[
-              "/images/projects/RightNews/preview/RightNews_preview1.png",
-              "/images/projects/RightNews/preview/RightNews_preview2.png",
-              "/images/projects/RightNews/preview/RightNews_preview3.png",
-              "/images/projects/RightNews/preview/RightNews_preview4.png",
-              "/images/projects/RightNews/preview/RightNews_preview5.png",
-              "/images/projects/RightNews/preview/RightNews_preview6.png"
+              "/images/projects/EduSearch/preview/EduSearch_preview2.png",
+              "/images/projects/EduSearch/preview/EduSearch_preview3.png",
+              "/images/projects/EduSearch/preview/EduSearch_preview4.png",
+              "/images/projects/EduSearch/preview/EduSearch_preview1.png"
             ],
             "siteURL":"https://edu-search-beige.vercel.app/",
             "githubURL":"https://github.com/kevin3173a-star/EduSearch",
             "projectKeyWord":[
               "#교육",
               "#강좌검색",
-              "#Json"
+              "#JSON"
             ],
             "type":"개인 프로젝트",
             "intro":"쏟아지는 교육 정보 속 구직활동을 하는 청년들을 위해 원하는 교육 강좌 정보를 검색하여 탐색하고 수강신청까지 이뤄질 수 있도록 연계한 웹 서비스",
@@ -346,7 +344,7 @@
             }
             ],
             "features":[
-              "카테고리별로 분리된 json데이터로 검색 시 로딩없이 데이터 출력 가능",
+              "카테고리별로 분리된 JSON데이터로 검색 시 로딩없이 데이터 출력 가능",
               "제목,내용에 포함되있는 기본 키워드로도 검색 가능 ",
               "강좌 내용 상세보기를 다양한 정보 및 후기를 볼 수 있으며 수강신청 버튼으로 연계된 강좌 사이트로 이동하여 수강신청 가능"
             ],
@@ -364,11 +362,11 @@
                   "solution":"당장은 안되도 준비되면 실행할거다라고 알려주는 <b>suspense</b>를 제일 바깥쪽 <b>layout.js</b>에 적용하여 <b>useSearchParams</b>를 포함한 전체가 <b>suspense</b>의 영향을 받도록 하였고 브라우저가 열리고 <b>url</b>이 생긴 후로부터 <b>useSearchParams</b>가 작동되도록 하여 정상 배포가 되도록 하였습니다."
               },
               {
-                  "issue":"주요정보를 스크롤되도 제자리에 고정되도록 <b>position:fixed</b>를 적용하였으니 <b>absolute</b>처럼 띄워지는 특성으로 기존 컨텐츠들이 망가지는 문제 발생",
-                  "solution":"좌측의 <b>fixed</b>될 공간을 비워둔만큼 스크롤되는 정보들을 우측으로 이동시켰습니다."
+                  "issue":"주요정보를 스크롤되어도 제자리에 고정되도록 <b>position: fixed</b>를 적용하였으나, 요소가 문서 흐름에서 제거되면서 주변 콘텐츠가 해당 영역을 인식하지 못해 레이아웃이 틀어지는 문제 발생",
+                  "solution":"<b>fixed</b>된 요소가 차지하는 공간만큼 좌측 여백을 확보하고, 나머지 콘텐츠를 우측으로 이동시켜 레이아웃이 유지되도록 개선하였습니다."
               }
             ],
-            "review":"<b>라우팅</b>을 직접 할 필요없이 폴더만 만들면 자동 생성되고 SSR·SSG와 같은 렌더링 전략과 파일 기반 라우팅을 제공해 로딩 성능이 좋으며 <b>useSearchParams,metadata</b>와 같은 기본 기능도 제공되며 배포도 쉬운 <b>Next.js</b>프레임워크를 직접 채택하여 진행한 첫 프로젝트임에 의미를 두고 작업하였습니다. 혼자 작업을 해보면서 <b>SSR·SSG 방식보다 느린 CSR방식</b>을 사용해보면서 브라우저에서 <b>url</b>을 읽어 <b>suspense</b>을 이용해 준비가 되면 <b>useSearchParams</b>를 사용할수있다는것과 성능과 배포 측면에서 렌더링 전략을 고려해야함을 깨달았습니다."
+            "review":"<b>파일 기반 라우팅</b>을 통해 별도의 라우팅 설정 없이 페이지를 구성할 수 있고, <b>검색 파라미터 처리와 메타데이터 관리</b> 등 다양한 기능을 기본 제공하는 <b>Next.js</b>를 채택하였습니다. 배포 과정이 간편하다는 점도 Next.js를 선택한 이유 중 하나였습니다. 프로젝트를 진행하며 Next.js가 <b>SSR,SSG</b>등 다양한 렌더링 방식을 지원한다는 점을 학습할 수 있었습니다. 다만 이번 프로젝트는 정적인 교육데이터를 <b>JSON 파일</b>로 관리하고 클라이언트에서 검색 기능을 수행하는 구조였기 때문에 <b>CSR</b> 방식만으로도 충분히 구현이 가능했습니다. 이를 통해 기술을 무조건 적용하기보다 <b>프로젝트의 규모와 데이터 특성</b>에 맞는 방식을 선택하는 것이 중요하다는 점을 배울 수 있었습니다."
      }
 
 
