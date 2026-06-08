@@ -5,11 +5,18 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import ProjectData from '../json/project.json'
+import { useState } from 'react';
 //let style={height:"300px", width:"1200px"}
 
 function PreviewSlide({data}) {
+  const [loadedCount,setLoadedCount]=useState(0);
+  const totalImages=data.popupPreview?.length || 0;
+  const isLoading=loadedCount<totalImages;
   return (
      <>
+      {isLoading && (
+        <div className="previewSpinner"></div>
+      )}
       <Swiper
         //style={style}
         spaceBetween={30}
@@ -26,8 +33,12 @@ function PreviewSlide({data}) {
           {
             data.popupPreview?.map((p)=>{
 
-              return  <SwiperSlide> 
-                        <img src={p} key={p}/>
+              return  <SwiperSlide key={p}> 
+                        <img 
+                          src={p} 
+                          alt=""
+                          onLoad={()=>setLoadedCount(prev=>prev+1)}
+                          />
                       </SwiperSlide>
             })
           }
