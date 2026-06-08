@@ -28,7 +28,7 @@ function App() {
     console.log(process.env.REACT_APP_APIURL)
 
     if (res.data.success) {
-      alert('전송되었습니다!')
+      alert('전송되었습니다.')
       setForm({
         title: '',
         email: '',
@@ -36,7 +36,7 @@ function App() {
       });
       e.target.reset();
     } else {
-      alert('전송에 실패하였습니다!')
+      alert('전송에 실패하였습니다.')
     }
   }
   
