@@ -1069,7 +1069,13 @@ body{
     }
   }
 }
-
+@media (max-width:1500px){
+      .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-1{
+        display: flex;
+        flex-direction: column;
+        padding-bottom:15px;
+      }
+}
 @media  /* (min-width:1000px) */ (max-width:1360px){
       .introTxtKeyWord{
         flex-wrap:wrap;
@@ -1104,11 +1110,7 @@ body{
       .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-4{
         gap:50px;
       }
-      .App .contents .projectPopup .popupBox .popupBoxTxt .popupBoxTxt1 .txt1-1{
-        display: flex;
-        flex-direction: column;
-        padding-bottom:15px;
-      }
+      
 }
 
 @media  /* (min-width:500px) and */ (max-width:1000px) {
